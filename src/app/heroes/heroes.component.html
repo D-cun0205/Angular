@@ -1,0 +1,10 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+</ul>
+<!-- 자식컴포넌트의 hero, 부모컴포넌트의 selectedHero 를 바인딩 -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
